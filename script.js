@@ -27,17 +27,19 @@ app.post('/register',(req,res) =>
 {
 	const {name,email,password} = req.body;
 
-	if(name != '' || email != '' || password != '') res.json('failed to register');
-	database.users.push(
+	if(name != '' && email != '' && password != '') r
 	{
-		id: ''+database.users.length,
-		name: name,
-		email: email,
-		password: password,
-		entries: 0,
-		joined : new Date(),
-	})
-	res.json('success');
+		database.users.push(
+		{
+			id: ''+database.users.length,
+			name: name,
+			email: email,
+			password: password,
+			entries: 0,
+			joined : new Date(),
+		})
+		res.json('success');
+	}
 })
 
 
