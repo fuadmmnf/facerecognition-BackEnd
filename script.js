@@ -27,7 +27,7 @@ app.post('/register',(req,res) =>
 {
 	const {name,email,password} = req.body;
 
-	if(name != '' && email != '' && password != '') r
+	if(name != '' && email != '' && password != '') 
 	{
 		database.users.push(
 		{
