@@ -27,7 +27,7 @@ app.post('/register',(req,res) =>
 {
 	const {name,email,password} = req.body;
 
-	if(name != '' && email != '' && password != '') r
+	if(name != '' && email != '' && password != '')
 	{
 		database.users.push(
 		{
@@ -91,7 +91,7 @@ app.post('/signin',(req,res) =>
 		if(email === user.email && password === user.password)
 		{
 			found = true;
-			return res.json('success');
+			return res.json(user);
 		}
 	})
 	if(!found) res.status(404).json('no such user');
